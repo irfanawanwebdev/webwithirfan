@@ -1,0 +1,13 @@
+{
+  "name": "WebWithIrfan",
+  "short_name": "WebWithIrfan",
+  "description": "Frontend developer & WordPress expert — custom websites, online stores and modern web apps.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070B14",
+  "theme_color": "#070B14",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
