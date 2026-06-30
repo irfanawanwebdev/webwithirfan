@@ -20,6 +20,7 @@ import { Contact } from './components/closing/Contact';
 import { Footer } from './components/closing/Footer';
 import { useHotkey } from './hooks/useUI';
 import { initMotion } from './lib/motion';
+import { initSmoothScroll } from './lib/smoothScroll';
 
 const MOTION_INTENSITY = 6; // hardcoded Tweaks default
 
@@ -28,16 +29,21 @@ export default function App() {
   useHotkey(useCallback(() => setCmd(true), []));
 
   useEffect(() => {
-    let cleanup: (() => void) | undefined;
-    // Defer until after first paint so GSAP loads off the critical path.
+    let cleanupMotion: (() => void) | undefined;
+    let cleanupScroll: (() => void) | undefined;
+    // Defer until after first paint so GSAP + Lenis load off the critical path.
     const id = window.requestAnimationFrame(() => {
       initMotion(MOTION_INTENSITY).then((fn) => {
-        cleanup = fn;
+        cleanupMotion = fn;
+      });
+      initSmoothScroll().then((fn) => {
+        cleanupScroll = fn;
       });
     });
     return () => {
       window.cancelAnimationFrame(id);
-      cleanup?.();
+      cleanupMotion?.();
+      cleanupScroll?.();
     };
   }, []);
 

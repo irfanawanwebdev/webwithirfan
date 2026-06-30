@@ -391,7 +391,8 @@
 .tools-search input { flex: 1; background: none; border: none; outline: none; color: var(--tx-0); font-size: var(--fs-sm); font-family: var(--font-body); }
 .tools-filter { display: flex; gap: 8px; flex-wrap: wrap; }
 .fchip { font-size: var(--fs-sm); padding: 9px 15px; border-radius: var(--r-pill); border: 1px solid var(--border); background: rgba(255,255,255,.02); color: var(--tx-2); transition: all .2s; }
-.fchip.active { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 6px 20px rgba(var(--accent-glow),.4); }
+/* indigo-600 (not --accent/#6366f1) so #fff text clears WCAG AA: ~6.3:1 vs 4.47:1. */
+.fchip.active { background: var(--indigo-600); border-color: var(--indigo-600); color: #fff; box-shadow: 0 6px 20px rgba(var(--accent-glow),.4); }
 .tools-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
 @media (max-width: 980px){ .tools-grid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 560px){ .tools-grid { grid-template-columns: 1fr; } }
