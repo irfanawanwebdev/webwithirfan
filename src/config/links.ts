@@ -23,11 +23,13 @@ export const SITE_URL =
   import.meta.env.VITE_SITE_URL?.replace(/\/$/, '') || 'https://webwithirfan.com';
 
 /**
- * Contact-form backend. Set VITE_FORM_ENDPOINT to a Formspree endpoint
- * (https://formspree.io/f/xxxx) or any handler that accepts a POST of form
- * fields and returns 2xx. When unset, the form degrades to a mailto: link.
+ * Contact-form backend (Web3Forms). Get a free access key at https://web3forms.com
+ * (enter your email, copy the key it sends you) and set it as VITE_WEB3FORMS_KEY.
+ * The key is public by design — safe to ship in the client bundle. When unset,
+ * the form degrades to a prefilled mailto: link so it is never a dead end.
  */
-export const FORM_ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT || '';
+export const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || '';
+export const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 /** Location shown in the About fact chips. */
 export const ABOUT_LOCATION = 'Multan, Pakistan · PKT (UTC+5)';

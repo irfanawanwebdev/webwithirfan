@@ -1,12 +1,12 @@
-/* Contact form — wired to a real backend with validation + honeypot.
+/* Contact form — wired to Web3Forms with validation + honeypot.
    Replaces the design-only preview in design/js/closing.jsx.
 
-   Backend: set VITE_FORM_ENDPOINT to a Formspree endpoint (or any handler that
-   accepts a POST and returns 2xx). With no endpoint set it degrades to a
-   prefilled mailto: so the form is never a dead end. */
+   Backend: set VITE_WEB3FORMS_KEY to your Web3Forms access key. With no key set
+   the form degrades to a prefilled mailto: (CC'd to both inboxes) so it is never
+   a dead end. The second recipient is configured in the Web3Forms dashboard. */
 import { useState, type FormEvent } from 'react';
 import { Icons } from '../Icons';
-import { FORM_ENDPOINT, LINKS } from '../../config/links';
+import { WEB3FORMS_KEY, WEB3FORMS_ENDPOINT, LINKS } from '../../config/links';
 import { PROJECT_TYPES, BUDGETS } from '../../data/content';
 
 interface Fields {
@@ -55,10 +55,11 @@ export function ContactForm() {
 
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget; // capture before any await (currentTarget clears)
     setTouched(true);
 
     // Honeypot — if a bot filled the hidden field, pretend success and bail.
-    const hp = (e.currentTarget.elements.namedItem('_gotcha') as HTMLInputElement)?.value;
+    const hp = (form.elements.namedItem('botcheck') as HTMLInputElement)?.value;
     if (hp) {
       setStatus('sent');
       return;
@@ -73,20 +74,25 @@ export function ContactForm() {
       return;
     }
 
-    if (!FORM_ENDPOINT) {
+    if (!WEB3FORMS_KEY) {
       mailtoFallback();
       setStatus('sent');
       return;
     }
 
     setStatus('submitting');
+    const fd = new FormData(form);
+    fd.append('access_key', WEB3FORMS_KEY);
+    fd.append('subject', `New project inquiry from ${fields.name || 'website'}`);
+    fd.append('from_name', 'WebWithIrfan contact form');
     try {
-      const res = await fetch(FORM_ENDPOINT, {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
         headers: { Accept: 'application/json' },
-        body: new FormData(e.currentTarget),
+        body: fd,
       });
-      if (res.ok) {
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success !== false) {
         setStatus('sent');
         setFields(EMPTY);
       } else {
@@ -119,15 +125,12 @@ export function ContactForm() {
 
   return (
     <form className="cform" onSubmit={submit} noValidate aria-label="Project inquiry form">
-      {/* Honeypot: hidden from users + assistive tech, attractive to bots. */}
+      {/* Honeypot: Web3Forms drops any submission where "botcheck" is filled.
+          Hidden from users + assistive tech, attractive to bots. */}
       <div className="hp" aria-hidden="true">
         <label htmlFor="cf-company">Company (leave blank)</label>
-        <input id="cf-company" name="_gotcha" type="text" tabIndex={-1} autoComplete="off" />
+        <input id="cf-company" name="botcheck" type="text" tabIndex={-1} autoComplete="off" />
       </div>
-
-      {/* Formspree: send a copy to the second inbox and set the email subject. */}
-      <input type="hidden" name="_cc" value={LINKS.emailCc} />
-      <input type="hidden" name="_subject" value="New project inquiry from WebWithIrfan" />
 
       <div className="cform-row">
         <div className="cfield">
