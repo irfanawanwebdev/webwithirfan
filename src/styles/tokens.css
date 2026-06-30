@@ -32,9 +32,9 @@
   --tx-3: #8593a8;          /* muted */
 
   /* ---- Type ---- */
-  --font-head: "Space Grotesk", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-head: "Space Grotesk Variable", "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
 
   --fs-hero: clamp(2.75rem, 6.2vw, 6rem);
   --fs-h1: clamp(2.25rem, 4.6vw, 4rem);
