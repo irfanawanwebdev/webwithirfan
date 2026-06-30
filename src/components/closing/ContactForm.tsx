@@ -12,6 +12,7 @@ import { PROJECT_TYPES, BUDGETS } from '../../data/content';
 interface Fields {
   name: string;
   email: string;
+  phone: string;
   type: string;
   budget: string;
   message: string;
@@ -21,7 +22,7 @@ type Status = 'idle' | 'submitting' | 'sent' | 'error';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const EMPTY: Fields = { name: '', email: '', type: '', budget: '', message: '' };
+const EMPTY: Fields = { name: '', email: '', phone: '', type: '', budget: '', message: '' };
 
 function validate(f: Fields): Errors {
   const e: Errors = {};
@@ -45,10 +46,11 @@ export function ContactForm() {
   const mailtoFallback = () => {
     const subject = encodeURIComponent(`Project inquiry from ${fields.name || 'website'}`);
     const body = encodeURIComponent(
-      `Name: ${fields.name}\nEmail: ${fields.email}\nProject type: ${fields.type || 'Not set'}\n` +
-        `Budget: ${fields.budget || 'Not set'}\n\n${fields.message}`,
+      `Name: ${fields.name}\nEmail: ${fields.email}\nPhone: ${fields.phone || 'Not set'}\n` +
+        `Project type: ${fields.type || 'Not set'}\nBudget: ${fields.budget || 'Not set'}\n\n${fields.message}`,
     );
-    window.location.href = `mailto:${LINKS.email}?subject=${subject}&body=${body}`;
+    const cc = encodeURIComponent(LINKS.emailCc);
+    window.location.href = `mailto:${LINKS.email}?cc=${cc}&subject=${subject}&body=${body}`;
   };
 
   async function submit(e: FormEvent<HTMLFormElement>) {
@@ -123,6 +125,10 @@ export function ContactForm() {
         <input id="cf-company" name="_gotcha" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
+      {/* Formspree: send a copy to the second inbox and set the email subject. */}
+      <input type="hidden" name="_cc" value={LINKS.emailCc} />
+      <input type="hidden" name="_subject" value="New project inquiry from WebWithIrfan" />
+
       <div className="cform-row">
         <div className="cfield">
           <label htmlFor="cf-name">Name</label>
@@ -156,6 +162,19 @@ export function ContactForm() {
           />
           {errors.email && <span className="err" id="cf-email-err">{errors.email}</span>}
         </div>
+      </div>
+
+      <div className="cfield">
+        <label htmlFor="cf-phone">Phone (optional)</label>
+        <input
+          id="cf-phone"
+          name="phone"
+          type="tel"
+          placeholder="+92 300 1234567"
+          autoComplete="tel"
+          value={fields.phone}
+          onChange={(e) => set('phone', e.target.value)}
+        />
       </div>
 
       <div className="cform-row">

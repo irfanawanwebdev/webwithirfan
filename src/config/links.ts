@@ -10,6 +10,8 @@ export const LINKS = {
   linkedin: 'https://www.linkedin.com/in/muhammad-irfan-webdev/',
   facebook: 'https://facebook.com/IrfanAwanDev',
   email: 'info@webwithirfan.com',
+  // Second inbox that also gets a copy of every contact-form submission.
+  emailCc: 'mirfanawan545@gmail.com',
   // Phone is used for both the "Call" channel and WhatsApp.
   phoneDisplay: '+92 347 2934523',
   tel: 'tel:+923472934523',

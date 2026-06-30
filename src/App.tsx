@@ -18,6 +18,7 @@ import { FAQ } from './components/sections/FAQ';
 import { TechMarquee } from './components/closing/TechMarquee';
 import { Contact } from './components/closing/Contact';
 import { Footer } from './components/closing/Footer';
+import { FloatingActions } from './components/FloatingActions';
 import { useHotkey } from './hooks/useUI';
 import { initMotion } from './lib/motion';
 import { initSmoothScroll } from './lib/smoothScroll';
@@ -66,6 +67,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <FloatingActions />
       <CommandPalette open={cmd} onClose={() => setCmd(false)} />
     </>
   );

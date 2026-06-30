@@ -577,3 +577,37 @@
   .footer-col a { padding-block: 10px; }
   .cta-alt a { padding-block: 5px; }
 }
+
+/* ===================== FLOATING ACTIONS (WhatsApp + back-to-top) ===================== */
+.fab-stack {
+  position: fixed; right: clamp(16px, 3vw, 28px); bottom: clamp(16px, 3vw, 28px);
+  z-index: 45; display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.fab {
+  width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
+  border: 1px solid var(--border); cursor: pointer; color: var(--tx-1);
+  transition: transform .25s var(--ease), opacity .25s var(--ease), box-shadow .3s, border-color .3s, background .3s;
+}
+.fab svg { width: 24px; height: 24px; }
+.fab:hover { transform: translateY(-3px) scale(1.05); }
+.fab:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }
+/* WhatsApp: brand green, always visible */
+.fab-wa { background: #25d366; color: #fff; border-color: transparent; box-shadow: 0 8px 24px rgba(37,211,102,.4); }
+.fab-wa:hover { box-shadow: 0 12px 30px rgba(37,211,102,.55); }
+/* Back-to-top: hidden until scrolled, fades/slides in */
+.fab-top { background: var(--card); box-shadow: 0 8px 24px rgba(0,0,0,.45); opacity: 0; visibility: hidden; transform: translateY(12px) scale(.9); pointer-events: none; }
+.fab-top:hover { color: var(--tx-0); border-color: color-mix(in oklab, var(--accent) 55%, var(--border)); }
+.fab-top.show { opacity: 1; visibility: visible; transform: translateY(0) scale(1); pointer-events: auto; }
+/* Smaller on phones */
+@media (max-width: 600px) {
+  .fab-stack { right: 14px; bottom: 14px; gap: 10px; }
+  .fab { width: 44px; height: 44px; }
+  .fab svg { width: 20px; height: 20px; }
+  .fab-wa svg { width: 22px; height: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fab { transition: opacity .2s var(--ease), visibility .2s; }
+  .fab:hover { transform: none; }
+  .fab-top { transform: none; }
+  .fab-top.show { transform: none; }
+}
