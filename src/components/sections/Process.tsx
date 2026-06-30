@@ -17,7 +17,7 @@ export function Process() {
           <div className="pstep" key={p.n}>
             <div className="pnum">{p.n}</div>
             <div>
-              <h4>{p.t}</h4>
+              <h3>{p.t}</h3>
               <p>{p.d}</p>
             </div>
           </div>

@@ -4,6 +4,7 @@ node_modules
 # Build output (the host rebuilds this from source — don't commit it)
 dist
 dist-ssr
+dist-server
 *.local
 
 # Environment / secrets (only .env.example is committed)

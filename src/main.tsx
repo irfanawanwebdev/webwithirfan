@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 
 // Self-hosted fonts (via @fontsource — no Google Fonts request).
 // Only the weights actually used are imported (no Inter 450).
@@ -17,8 +17,17 @@ import './styles/tokens.css';
 import './styles/sections.css';
 import App from './App';
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root')!;
+const app = (
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 );
+
+// In production the HTML is prerendered (SSG) at build time, so hydrate it.
+// During `vite dev` #root is empty, so mount fresh instead.
+if (root.hasChildNodes()) {
+  hydrateRoot(root, app);
+} else {
+  createRoot(root).render(app);
+}

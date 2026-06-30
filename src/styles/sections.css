@@ -413,7 +413,7 @@
 .pstep { padding: 0 16px; display: flex; flex-direction: column; gap: 14px; }
 .pstep .pnum { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font-family: var(--font-head); font-size: 1.2rem; color: var(--tx-3); background: var(--card); border: 1px solid var(--border); position: relative; z-index: 2; transition: color .4s var(--ease), background .4s, border-color .4s, box-shadow .4s, transform .4s var(--ease); }
 .pstep.on .pnum { color: var(--tx-0); background: linear-gradient(140deg, var(--accent), var(--accent-2)); border-color: transparent; box-shadow: 0 8px 26px rgba(var(--accent-glow),.5); transform: scale(1.06); }
-.pstep h4 { font-family: var(--font-head); font-size: 1.15rem; color: var(--tx-0); }
+.pstep h3 { font-family: var(--font-head); font-size: 1.15rem; color: var(--tx-0); }
 .pstep p { color: var(--tx-2); font-size: var(--fs-sm); }
 @media (max-width:860px){ .pstep { flex-direction: row; align-items: flex-start; gap: 18px; padding: 0; } .pstep .pnum { flex: none; } }
 

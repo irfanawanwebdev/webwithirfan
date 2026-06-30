@@ -6,7 +6,7 @@
   "description": "WebWithIrfan — frontend developer & WordPress expert portfolio/agency site.",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-server && node scripts/prerender.mjs",
     "preview": "vite preview --port 4173",
     "typecheck": "tsc -b --noEmit",
     "gen-assets": "node scripts/gen-assets.mjs"

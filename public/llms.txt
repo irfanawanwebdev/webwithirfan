@@ -1,0 +1,26 @@
+# WebWithIrfan
+
+> Irfan Awan — frontend developer and WordPress expert. I build fast, custom websites, WooCommerce & multivendor stores, and modern web apps in React, Vite and Next.js. Worldwide, remote. Contact: info@webwithirfan.com
+
+Single-page portfolio/agency site. The sections below are anchors on the home page (https://webwithirfan.com/).
+
+## Services
+- [WordPress Development](https://webwithirfan.com/#services): Custom themes, Elementor builds and tailored plugins — fast, secure and client-editable.
+- [eCommerce & Multivendor](https://webwithirfan.com/#services): WooCommerce and multivendor marketplaces with payment gateways, product catalogs and vendor dashboards.
+- [Frontend Development](https://webwithirfan.com/#services): Pixel-accurate, responsive interfaces in modern HTML, CSS and JavaScript.
+- [Web App Development](https://webwithirfan.com/#services): React + Vite or Next.js + TypeScript apps wired to real backends (Supabase, Vercel).
+- [AI Workflow Automation](https://webwithirfan.com/#services): Connecting tools and automating workflows with AI agents.
+
+## Work
+- [Selected projects](https://webwithirfan.com/#projects): Team management platform (React + Vite + Supabase), a 20+ utility DevTools Chrome extension, local-business WordPress sites, and WooCommerce/multivendor stores.
+- [Free dev tools](https://webwithirfan.com/#tools): Clamp calculator, box-shadow & gradient builders, CSS inspector, broken-link checker, palette extractor, CSS minifier, meta-tag previewer.
+
+## About
+- [How I work](https://webwithirfan.com/#process): Five steps — Discovery, Plan, Build, Optimize, Handover — with previews to review at every milestone.
+- [About Irfan](https://webwithirfan.com/#about): 6+ years building for the web; 140+ projects delivered; ~95 average Lighthouse score; 30+ stores and sites.
+- [FAQ](https://webwithirfan.com/#faq): Pricing, timelines, redesigns/migrations, self-editing, post-launch support, and content.
+
+## Contact
+- [Get in touch](https://webwithirfan.com/#contact): Project type and budget form. Email info@webwithirfan.com.
+- GitHub: https://github.com/irfanawanwebdev
+- LinkedIn: https://www.linkedin.com/in/muhammad-irfan-webdev/
