@@ -32,7 +32,7 @@ export function Footer() {
               <span>WebWith<b>Irfan</b></span>
             </a>
             <p>
-              Frontend developer &amp; WordPress expert building fast websites, online stores and
+              Frontend developer and WordPress expert. I build fast websites, online stores, and
               modern web apps.
             </p>
             <div className="socials" style={{ marginTop: 20 }}>

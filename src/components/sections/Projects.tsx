@@ -93,7 +93,7 @@ export function Projects() {
       <SectionHead
         eyebrow="Selected work"
         title="Projects I've built."
-        lead="A mix of recent client work and tools I've made for my own workflow."
+        lead="A mix of recent client work and tools I made for my own workflow."
       />
       <div className="proj-grid">
         {PROJECTS.map((p) => (

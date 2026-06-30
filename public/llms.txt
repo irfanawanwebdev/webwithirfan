@@ -1,26 +1,26 @@
 # WebWithIrfan
 
-> Irfan Awan — frontend developer and WordPress expert. I build fast, custom websites, WooCommerce & multivendor stores, and modern web apps in React, Vite and Next.js. Worldwide, remote. Contact: info@webwithirfan.com
+> I'm Irfan Awan, a WordPress and frontend developer. I build fast, custom websites, WooCommerce and multivendor stores, and web apps in React, Vite, and Next.js. I work remotely with clients worldwide. Email: info@webwithirfan.com
 
-Single-page portfolio/agency site. The sections below are anchors on the home page (https://webwithirfan.com/).
+This is a single-page site. The sections below are anchors on the home page (https://webwithirfan.com/).
 
 ## Services
-- [WordPress Development](https://webwithirfan.com/#services): Custom themes, Elementor builds and tailored plugins — fast, secure and client-editable.
-- [eCommerce & Multivendor](https://webwithirfan.com/#services): WooCommerce and multivendor marketplaces with payment gateways, product catalogs and vendor dashboards.
-- [Frontend Development](https://webwithirfan.com/#services): Pixel-accurate, responsive interfaces in modern HTML, CSS and JavaScript.
-- [Web App Development](https://webwithirfan.com/#services): React + Vite or Next.js + TypeScript apps wired to real backends (Supabase, Vercel).
-- [AI Workflow Automation](https://webwithirfan.com/#services): Connecting tools and automating workflows with AI agents.
+- [WordPress Development](https://webwithirfan.com/#services): Custom themes, Elementor sites, and plugins. Fast, secure, and easy to edit yourself.
+- [eCommerce & Multivendor](https://webwithirfan.com/#services): WooCommerce shops and multivendor marketplaces with payment gateways, product catalogs, and vendor dashboards.
+- [Frontend Development](https://webwithirfan.com/#services): Clean, responsive pages in modern HTML, CSS, and JavaScript.
+- [Web App Development](https://webwithirfan.com/#services): React with Vite, or Next.js with TypeScript, connected to a real backend like Supabase.
+- [AI Workflow Automation](https://webwithirfan.com/#services): Connect your tools and automate repeat tasks to save time.
 
 ## Work
-- [Selected projects](https://webwithirfan.com/#projects): Team management platform (React + Vite + Supabase), a 20+ utility DevTools Chrome extension, local-business WordPress sites, and WooCommerce/multivendor stores.
-- [Free dev tools](https://webwithirfan.com/#tools): Clamp calculator, box-shadow & gradient builders, CSS inspector, broken-link checker, palette extractor, CSS minifier, meta-tag previewer.
+- [Selected projects](https://webwithirfan.com/#projects): A team management platform (React, Vite, Supabase), a 20+ tool DevTools Chrome extension, local business WordPress sites, and WooCommerce and multivendor stores.
+- [Free dev tools](https://webwithirfan.com/#tools): Clamp calculator, box shadow and gradient builders, CSS inspector, broken link checker, palette extractor, CSS minifier, and meta tag previewer.
 
 ## About
-- [How I work](https://webwithirfan.com/#process): Five steps — Discovery, Plan, Build, Optimize, Handover — with previews to review at every milestone.
-- [About Irfan](https://webwithirfan.com/#about): 6+ years building for the web; 140+ projects delivered; ~95 average Lighthouse score; 30+ stores and sites.
-- [FAQ](https://webwithirfan.com/#faq): Pricing, timelines, redesigns/migrations, self-editing, post-launch support, and content.
+- [How I work](https://webwithirfan.com/#process): Five steps. Discovery, Plan, Build, Optimize, and Handover, with previews to review at every stage.
+- [About Irfan](https://webwithirfan.com/#about): 6+ years building for the web. 140+ projects, about 95 average Lighthouse score, and 30+ stores and sites.
+- [FAQ](https://webwithirfan.com/#faq): Pricing, timelines, redesigns and migrations, editing your own site, support after launch, and content.
 
 ## Contact
-- [Get in touch](https://webwithirfan.com/#contact): Project type and budget form. Email info@webwithirfan.com.
+- [Get in touch](https://webwithirfan.com/#contact): Pick a project type and budget in the form. Email info@webwithirfan.com.
 - GitHub: https://github.com/irfanawanwebdev
 - LinkedIn: https://www.linkedin.com/in/muhammad-irfan-webdev/

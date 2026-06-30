@@ -93,8 +93,8 @@ export function Hero() {
             <span className="grad">web apps</span>.
           </h1>
           <p className="hero-sub">
-            I'm Irfan — a frontend developer and WordPress expert. I build custom websites,
-            eCommerce stores and modern apps in React &amp; Next.js.
+            I'm Irfan, a frontend developer and WordPress expert. I build custom websites,
+            online stores, and modern apps in React and Next.js.
           </p>
           <div className="hero-actions">
             <a

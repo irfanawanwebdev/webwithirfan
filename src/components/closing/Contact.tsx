@@ -12,7 +12,7 @@ export function Contact() {
             <span className="eyebrow">Let's build</span>
             <h2>Got a website, store or web app in mind?</h2>
             <p className="lead">
-              Tell me what you're building — I'll reply within 24 hours with a clear, honest plan.
+              Tell me what you are building. I will reply within 24 hours with a clear, honest plan.
             </p>
             <div className="cta-alt">
               <a href={'mailto:' + LINKS.email}>

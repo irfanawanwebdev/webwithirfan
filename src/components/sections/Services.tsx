@@ -8,8 +8,8 @@ export function Services() {
     <section id="services" className="section container">
       <SectionHead
         eyebrow="What I build"
-        title="Frontend, WordPress and modern web apps — end to end."
-        lead="My core expertise is WordPress, PHP and JavaScript. Each service below lists exactly what it covers."
+        title="Frontend, WordPress, and modern web apps, end to end."
+        lead="My main skills are WordPress, PHP, and JavaScript. Each service below shows exactly what it covers."
       />
       <div className="services-grid">
         {SERVICES.map((s) => (

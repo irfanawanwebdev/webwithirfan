@@ -30,42 +30,42 @@ export const SERVICES: Service[] = [
     icon: 'wp',
     title: 'WordPress Development',
     size: 'feature',
-    desc: 'My core craft. Custom themes, Elementor builds and tailored plugins — engineered to be fast, secure and fully client-editable.',
+    desc: 'This is my main work. I build custom themes, Elementor sites, and plugins made for what you need. They load fast, stay secure, and you can edit them yourself.',
     tags: ['Custom Themes', 'Elementor', 'Custom Plugins', 'PHP', 'ACF', 'Speed Optimization', 'Security Hardening', 'Maintenance', 'Migrations'],
-    outcome: 'Sites that load fast and stay easy to manage.',
+    outcome: 'A fast site that stays easy to manage.',
   },
   {
     id: 'ecom',
     icon: 'grid',
     title: 'eCommerce & Multivendor',
     size: 'wide',
-    desc: 'Online stores and marketplaces built to sell — from single-store WooCommerce to full multivendor platforms.',
+    desc: 'Online stores and marketplaces made to sell. I build everything from a single WooCommerce shop to a full multivendor platform.',
     tags: ['WooCommerce', 'Multivendor', 'Payment Gateways', 'Product Catalogs', 'Vendor Dashboards', 'Checkout Tuning'],
-    outcome: 'Stores that handle scale and convert.',
+    outcome: 'Stores that grow with you and turn visitors into buyers.',
   },
   {
     id: 'frontend',
     icon: 'code',
     title: 'Frontend Development',
-    desc: 'Pixel-accurate, responsive interfaces in clean, modern HTML, CSS and JavaScript.',
+    desc: 'Clean, responsive pages in modern HTML, CSS, and JavaScript. They match your design and work well on every screen.',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive UI', 'Animations', 'Cross-browser'],
-    outcome: 'Interfaces that feel fast and polished.',
+    outcome: 'Pages that feel fast and look sharp.',
   },
   {
     id: 'apps',
     icon: 'layers',
     title: 'Web App Development',
-    desc: 'Modern web apps in React + Vite or Next.js + TypeScript, wired to real backends.',
+    desc: 'Web apps in React with Vite, or Next.js with TypeScript, connected to a real backend like Supabase.',
     tags: ['React', 'Vite', 'Next.js', 'TypeScript', 'Supabase', 'Vercel'],
-    outcome: 'Type-safe products, shipped in tight iterations.',
+    outcome: 'Solid products, shipped in small, steady steps.',
   },
   {
     id: 'ai',
     icon: 'agent',
     title: 'AI Workflow Automation',
-    desc: 'Automating workflows and connecting your tools with AI agents — a layer I am actively building into my toolkit and improving with every project.',
+    desc: 'I connect your tools and automate the repeat tasks that eat your time. This is a newer part of my work, and I keep improving it with every project.',
     tags: ['Workflow Automation', 'AI Integrations', 'Agentic Workflows'],
-    outcome: 'Smarter workflows with less manual busywork.',
+    outcome: 'Less busywork, so you spend time on what matters.',
   },
 ];
 
@@ -95,20 +95,20 @@ export const PROJECTS: Project[] = [
     cat: 'React + Vite',
     mock: 'dashboard',
     problem:
-      'A marketing agency was tracking tasks, clients and team workload across scattered spreadsheets — with no live view of who was overloaded.',
-    desc: 'A multi-department workload platform with clients, tasks, meetings, time tracking and reports — plus a built-in AI assistant that reads and writes your live data.',
+      'A marketing agency tracked tasks, clients, and team workload across many spreadsheets. They had no clear view of who had too much on their plate.',
+    desc: 'I built a workload platform for six departments. It handles clients, tasks, meetings, time tracking, and reports, with a built-in assistant that reads and updates live data.',
     stats: [['6', 'departments'], ['8', 'team members']],
     stack: ['React', 'Vite', 'Supabase', 'Vercel'],
     big: true,
   },
   {
     id: 'p2',
-    title: 'DevTools — Chrome Extension',
+    title: 'DevTools Chrome Extension',
     cat: 'Chrome Extension',
     mock: 'extension',
     problem:
-      'My frontend workflow meant jumping between separate sites for clamp math, shadows, gradients and CSS audits.',
-    desc: 'A personal DevTools extension bundling 20+ CSS and frontend utilities — clamp calculator, CSS inspector, broken-link checker, box-shadow & gradient builders — one click away in the browser.',
+      'My frontend work meant jumping between many sites for clamp math, shadows, gradients, and CSS checks.',
+    desc: 'So I built one Chrome extension with 20+ CSS and frontend tools. It has a clamp calculator, CSS inspector, broken link checker, and box shadow and gradient builders, all one click away.',
     stats: [['20', 'dev tools'], ['1', '-click access']],
     stack: ['JavaScript', 'Chrome API', 'CSS'],
   },
@@ -118,8 +118,8 @@ export const PROJECTS: Project[] = [
     cat: 'WordPress',
     mock: 'site',
     problem:
-      'Renovation, construction and auto businesses needed fast, lead-generating sites they could update themselves.',
-    desc: 'Conversion-focused WordPress sites built with Elementor — custom design, on-page SEO, quote and contact flows, fully client-editable. (Live examples coming soon.)',
+      'Renovation, construction, and auto businesses needed fast sites that bring in leads and that they can update on their own.',
+    desc: 'I built WordPress sites with Elementor that focus on getting more enquiries. Custom design, on-page SEO, and quote and contact forms, all easy for the owner to edit. (Live examples coming soon.)',
     stats: [['Elementor', '+ custom'], ['SEO', 'optimized']],
     stack: ['WordPress', 'Elementor', 'PHP'],
   },
@@ -129,8 +129,8 @@ export const PROJECTS: Project[] = [
     cat: 'WooCommerce',
     mock: 'store',
     problem:
-      'Retailers and marketplaces needed stores that could handle many products, multiple vendors and a smooth checkout.',
-    desc: 'WooCommerce and multivendor stores with custom product catalogs, vendor dashboards, payment gateways and performance tuning.',
+      'Retailers and marketplaces needed stores that handle lots of products, many vendors, and a smooth checkout.',
+    desc: 'I built WooCommerce and multivendor stores with custom product catalogs, vendor dashboards, payment gateways, and speed tuning.',
     stats: [['Multi-vendor', 'marketplaces'], ['Woo', 'Commerce']],
     stack: ['WordPress', 'WooCommerce', 'PHP'],
   },
@@ -144,11 +144,11 @@ export interface ProcessStep {
 }
 
 export const PROCESS: ProcessStep[] = [
-  { n: '01', t: 'Discovery', d: 'We talk through goals, audience, content and the systems you already use.' },
-  { n: '02', t: 'Plan', d: 'I scope the build — stack, structure, design direction and timeline.' },
-  { n: '03', t: 'Build', d: 'I build in clear stages with previews you can review at every step.' },
-  { n: '04', t: 'Optimize', d: 'Performance, responsiveness and on-page SEO tuned before launch.' },
-  { n: '05', t: 'Handover', d: 'You get a fast site you can edit yourself — plus ongoing support if you want it.' },
+  { n: '01', t: 'Discovery', d: 'We talk through your goals, your audience, your content, and the tools you already use.' },
+  { n: '02', t: 'Plan', d: 'I map out the build: the tech, the structure, the design direction, and the timeline.' },
+  { n: '03', t: 'Build', d: 'I build in clear stages and share previews so you can review every step.' },
+  { n: '04', t: 'Optimize', d: 'I tune speed, mobile layout, and on-page SEO before we go live.' },
+  { n: '05', t: 'Handover', d: 'You get a fast site you can edit yourself, plus ongoing support if you want it.' },
 ];
 
 /* ---- Stack marquee ---- */
@@ -188,14 +188,14 @@ export interface Tool {
 }
 
 export const TOOLS: Tool[] = [
-  { id: 'clamp', icon: 'type', cat: 'CSS', name: 'Clamp Calculator', desc: 'Fluid type & spacing — generate clamp() values from min/max viewport sizes.' },
-  { id: 'shadow', icon: 'layers', cat: 'CSS', name: 'Box-Shadow Builder', desc: 'Layered, realistic shadows with live preview and one-click copy.' },
-  { id: 'grad', icon: 'palette', cat: 'Color', name: 'Gradient Builder', desc: 'Linear, radial & conic gradients with easing-smoothed color stops.' },
-  { id: 'inspect', icon: 'search', cat: 'Audit', name: 'CSS Inspector', desc: 'Inspect computed styles, spacing and font stacks on any element.' },
-  { id: 'links', icon: 'seo', cat: 'Audit', name: 'Broken-Link Checker', desc: 'Crawl a page and flag dead links, redirects and missing assets.' },
-  { id: 'pal', icon: 'spark', cat: 'Color', name: 'Palette Extractor', desc: 'Pull a working color palette out of any image or logo.' },
-  { id: 'minify', icon: 'code', cat: 'CSS', name: 'CSS Minify & Beautify', desc: 'Clean up or compress stylesheets without changing behavior.' },
-  { id: 'meta', icon: 'doc', cat: 'Audit', name: 'Meta-Tag Previewer', desc: 'Preview how a page card renders on Google, X and WhatsApp.' },
+  { id: 'clamp', icon: 'type', cat: 'CSS', name: 'Clamp Calculator', desc: 'Fluid type and spacing. Get clamp() values from your min and max viewport sizes.' },
+  { id: 'shadow', icon: 'layers', cat: 'CSS', name: 'Box-Shadow Builder', desc: 'Build layered, realistic shadows with a live preview and one-click copy.' },
+  { id: 'grad', icon: 'palette', cat: 'Color', name: 'Gradient Builder', desc: 'Make linear, radial, and conic gradients with smooth color stops.' },
+  { id: 'inspect', icon: 'search', cat: 'Audit', name: 'CSS Inspector', desc: 'Check computed styles, spacing, and font stacks on any element.' },
+  { id: 'links', icon: 'seo', cat: 'Audit', name: 'Broken-Link Checker', desc: 'Scan a page and flag dead links, redirects, and missing files.' },
+  { id: 'pal', icon: 'spark', cat: 'Color', name: 'Palette Extractor', desc: 'Pull a ready color palette from any image or logo.' },
+  { id: 'minify', icon: 'code', cat: 'CSS', name: 'CSS Minify & Beautify', desc: 'Clean up or shrink your stylesheets without changing how they work.' },
+  { id: 'meta', icon: 'doc', cat: 'Audit', name: 'Meta-Tag Previewer', desc: 'See how your page card looks on Google, X, and WhatsApp.' },
 ];
 
 export const TOOL_CATS = ['All', 'CSS', 'Color', 'Audit'] as const;
@@ -226,7 +226,7 @@ export const QUOTES: Quote[] = [
   {
     id: 'q2',
     real: true,
-    text: "I'm based in the US and Irfan has become my go-to developer. Across several projects he's been reliable, communicative and consistently high quality — that's the main reason I keep coming back to him.",
+    text: "I'm based in the US and Irfan has become my go-to developer. Across several projects he's been reliable, communicative and consistently high quality, and that's the main reason I keep coming back to him.",
     who: 'Returning client',
     role: 'USA · Web app project',
     src: 'Long-term client',
@@ -253,7 +253,7 @@ export const QUOTES: Quote[] = [
   {
     id: 'q5',
     real: true,
-    text: "Quality and communication are where Irfan really stands out. Quick to respond across time zones and genuinely invested in getting the result right — which is why we've worked together long term.",
+    text: "Quality and communication are where Irfan really stands out. Quick to respond across time zones and genuinely invested in getting the result right, which is why we've worked together long term.",
     who: 'Startup founder',
     role: 'USA · Frontend build',
     src: 'Long-term client',
@@ -268,12 +268,12 @@ export interface Faq {
 }
 
 export const FAQS: Faq[] = [
-  { q: 'How much does a website cost?', a: "It depends on scope. Simple business sites are the most affordable; stores, multivendor platforms and custom web apps cost more. Pick a budget range in the contact form and I'll tell you honestly what it can get — and what I'd skip." },
-  { q: 'How long does a project take?', a: "A typical business website takes 2–4 weeks; eCommerce builds usually 4–8 weeks depending on products and integrations. The biggest factor is how ready your content is — I'll give you a clear timeline in the project plan." },
-  { q: 'Can you fix or redesign my existing site?', a: "Yes. Speed optimization, redesigns, migrations, broken plugins, security cleanups — a lot of my work starts on sites someone else built. Send me the URL and I'll tell you what's worth fixing versus rebuilding." },
-  { q: 'Will I be able to edit the site myself?', a: "Always. Every site is built to be client-editable — pages, text, images and products — and you get a handover walkthrough so you're never locked in or dependent on me for small changes." },
-  { q: 'Do you offer support after launch?', a: "Yes, optional. Some clients take ongoing maintenance (updates, backups, monitoring, small changes); others just call me when something's needed. No forced contracts." },
-  { q: 'Who writes the content?', a: "You know your business best, so the words come from you — but I structure every page first, so you only fill in clearly defined blocks instead of facing a blank page. I also handle on-page SEO basics." },
+  { q: 'How much does a website cost?', a: "It depends on the scope. Simple business sites cost the least. Stores, multivendor platforms, and custom web apps cost more. Pick a budget range in the form, and I will tell you honestly what it can cover and what I would leave out." },
+  { q: 'How long does a project take?', a: "A typical business website takes 2 to 4 weeks. Online stores usually take 4 to 8 weeks, based on products and integrations. The biggest factor is how ready your content is, and I give you a clear timeline in the project plan." },
+  { q: 'Can you fix or redesign my existing site?', a: "Yes. Speed fixes, redesigns, migrations, broken plugins, and security cleanups. A lot of my work starts on sites someone else built. Send me the URL, and I will tell you what is worth fixing and what is better to rebuild." },
+  { q: 'Will I be able to edit the site myself?', a: "Always. I build every site so you can edit it yourself: pages, text, images, and products. You also get a handover walkthrough, so you are never stuck waiting on me for small changes." },
+  { q: 'Do you offer support after launch?', a: "Yes, and it is optional. Some clients take ongoing care like updates, backups, monitoring, and small changes. Others just call me when they need something. There are no locked-in contracts." },
+  { q: 'Who writes the content?', a: "You know your business best, so the words come from you. I set up the structure of every page first, so you just fill in clear blocks instead of staring at a blank page. I also handle the on-page SEO basics." },
 ];
 
 /* ---- Contact form options ---- */
@@ -285,7 +285,7 @@ export const PROJECT_TYPES = [
   'Something else',
 ];
 
-export const BUDGETS = ['Under $500', '$500 – $1,500', '$1,500 – $5,000', '$5,000+', 'Not sure yet'];
+export const BUDGETS = ['Under $500', '$500 to $1,500', '$1,500 to $5,000', '$5,000+', 'Not sure yet'];
 
 /* ---- Hero code panel lines ---- */
 export type CodeToken = [className: string, text: string];

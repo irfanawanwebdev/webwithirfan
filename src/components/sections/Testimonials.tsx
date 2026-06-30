@@ -11,7 +11,7 @@ export function Testimonials() {
         center
         eyebrow="Client feedback"
         title="What clients say."
-        lead="Real feedback from delivered projects — more being collected."
+        lead="Real feedback from finished projects. I am collecting more."
       />
       <div className="tcols">
         {QUOTES.map((q) =>

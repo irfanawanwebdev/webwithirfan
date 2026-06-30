@@ -43,10 +43,10 @@ export function ContactForm() {
   };
 
   const mailtoFallback = () => {
-    const subject = encodeURIComponent(`Project inquiry — ${fields.name || 'website'}`);
+    const subject = encodeURIComponent(`Project inquiry from ${fields.name || 'website'}`);
     const body = encodeURIComponent(
-      `Name: ${fields.name}\nEmail: ${fields.email}\nProject type: ${fields.type || '—'}\n` +
-        `Budget: ${fields.budget || '—'}\n\n${fields.message}`,
+      `Name: ${fields.name}\nEmail: ${fields.email}\nProject type: ${fields.type || 'Not set'}\n` +
+        `Budget: ${fields.budget || 'Not set'}\n\n${fields.message}`,
     );
     window.location.href = `mailto:${LINKS.email}?subject=${subject}&body=${body}`;
   };
@@ -100,7 +100,7 @@ export function ContactForm() {
       <div className="cform cform-done" aria-live="polite">
         <span className="big-check">{Icons.check({ size: 26 })}</span>
         <h3>Message sent</h3>
-        <p>Thanks — I'll get back to you within 24 hours with a clear, honest plan.</p>
+        <p>Thanks. I will get back to you within 24 hours with a clear, honest plan.</p>
         <button
           className="btn btn-ghost"
           onClick={() => {
@@ -194,7 +194,7 @@ export function ContactForm() {
         <textarea
           id="cf-message"
           name="message"
-          placeholder="What are you building? Links, deadlines and examples all help."
+          placeholder="What are you building? Links, deadlines, and examples all help."
           value={fields.message}
           onChange={(e) => set('message', e.target.value)}
           aria-invalid={errors.message ? 'true' : undefined}

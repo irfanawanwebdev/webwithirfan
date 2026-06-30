@@ -10,7 +10,7 @@ export function About() {
         <div className="about-photo" data-reveal>
           <img
             src={aboutPhoto}
-            alt="Irfan Awan — frontend developer and WordPress expert"
+            alt="Irfan Awan, frontend developer and WordPress expert"
             width={699}
             height={727}
             loading="lazy"
@@ -33,14 +33,14 @@ export function About() {
           <span className="eyebrow" data-reveal>About me</span>
           <h2 data-reveal>The developer behind the work.</h2>
           <p data-reveal>
-            I'm <b>Irfan Awan</b> — a frontend developer and WordPress expert. For the last six
-            years I've built websites, online stores and web apps for small businesses and
-            agencies: 140+ projects delivered, from local business sites to multivendor
+            I'm <b>Irfan Awan</b>, a frontend developer and WordPress expert. For the last six
+            years I have built websites, online stores, and web apps for small businesses and
+            agencies. That adds up to 140+ projects, from local business sites to multivendor
             marketplaces.
           </p>
           <p data-reveal>
-            My core stack is <b>WordPress, PHP and JavaScript</b>. These days I also ship modern
-            apps in React and Next.js — and I'm building AI workflow automation into my toolkit.
+            My core stack is <b>WordPress, PHP, and JavaScript</b>. These days I also build apps
+            in React and Next.js, and I am adding AI workflow automation to my toolkit.
             Every build comes down to the same three things:{' '}
             <b>speed, clean code, and a site you can edit yourself</b>.
           </p>
