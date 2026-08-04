@@ -11,13 +11,24 @@ fonts, GSAP loaded off the critical path, and a contact form wired to a real bac
 
 ```bash
 npm install
-cp .env.example .env      # then fill in VITE_FORM_ENDPOINT (see "Contact form")
-npm run dev               # local dev server
-npm run build             # type-check + static build -> dist/
-npm run preview           # serve the production build locally
+cp .env.example .env.local   # then fill in VITE_WEB3FORMS_KEY (see "Contact form")
+npm run dev                  # local dev server
+npm run build                # type-check + static build -> dist/
+npm run preview              # serve the production build locally
 ```
 
-Deploy `dist/` to any static host (Vercel, Netlify, Cloudflare Pages, S3, …).
+## Deployment (Vercel)
+
+Production is a Vercel project connected to this repo — every push to `main`
+builds and deploys. Live at <https://webwithirfan.vercel.app/> until the
+custom domain is attached.
+
+- `VITE_WEB3FORMS_KEY` is set in **Vercel > Settings > Environment Variables**
+  (Production). It is injected at build time; nothing secret lives in the repo.
+- Security headers and immutable caching for `/assets/` are configured in
+  [`vercel.json`](vercel.json).
+- The output is still a plain static `dist/`, so it can move to any static host
+  (Netlify, Cloudflare Pages, S3, …) if ever needed.
 
 ## Project structure
 
@@ -52,26 +63,32 @@ All centralized in [`src/config/links.ts`](src/config/links.ts). Current values:
 - **Facebook** — `facebook.com/IrfanAwanDev`
 - **Location** — Multan, Pakistan · PKT (UTC+5)
 
-Still to set before launch:
+Still to set before full launch:
 
-- **`VITE_FORM_ENDPOINT`** — contact-form backend (see below).
-- **`VITE_SITE_URL`** + the canonical/OG URLs in `index.html`, `robots.txt`, `sitemap.xml`.
+- **Custom domain** — point `webwithirfan.com` at the Vercel project (currently the old
+  WordPress site is still live there).
 - **Project screenshots** — set `image: { src, width, height }` on a `Project` to replace
   its CSS faux-UI mock; set `href` to turn the card into a case-study link.
 - **Reviews** — `QUOTES` in `data/content.ts` holds the real client feedback shown in the
   Testimonials section; add new quotes here as they come in.
+- **Final OG cover** — replace the placeholder `public/og-cover.png` once the logo is final.
 
 ## Contact form
 
-The form (`components/closing/ContactForm.tsx`) posts to `VITE_FORM_ENDPOINT`.
+The form (`components/closing/ContactForm.tsx`) posts to **Web3Forms**
+(`https://api.web3forms.com/submit`) using the access key from `VITE_WEB3FORMS_KEY`.
 
-1. Create a free form at [Formspree](https://formspree.io) (or any handler that accepts a
-   `POST` and returns 2xx).
-2. Set `VITE_FORM_ENDPOINT=https://formspree.io/f/xxxxxx` in `.env`.
+- **Production**: the key is set in Vercel's environment variables, so it is baked into
+  the bundle on deploy. Recipients (primary + CC) are configured in the Web3Forms
+  dashboard for the key.
+- **Local**: copy `.env.example` to `.env.local` and paste the key. Note that Vite only
+  loads `.env` / `.env.local` / `.env.[mode]` — a file named anything else (like the old
+  `local.env`) is silently ignored, and the bundler then strips the whole Web3Forms code
+  path as dead code.
 
-It includes client-side validation, a honeypot (`_gotcha`) for spam, an error state, and a
-success state. **With no endpoint set it degrades to a prefilled `mailto:`** so it is never
-a dead end.
+It includes client-side validation, a honeypot (`botcheck`) for spam, an error state, and
+a success state. **With no key set it degrades to a prefilled `mailto:`** so it is never a
+dead end.
 
 ## What was intentionally excluded / hardcoded
 
@@ -99,8 +116,10 @@ are hardcoded:
 - ✅ Background blur/noise reduced on small screens; aurora paused when tab hidden.
 - ✅ GSAP dynamically imported (off the initial bundle, after first paint).
 - ✅ About photo optimized (749 KB PNG → ~15 KB webp) with `width`/`height` + `loading="lazy"`.
-- ⏳ **Privacy policy** — the form collects PII; add a `/privacy` page and link it before launch.
-- ⏳ **Real OG cover** — `public/og-cover.png` is a generated placeholder; design a final 1200×630.
+- ✅ Privacy policy at `/privacy/` (static page in `public/`), linked from the footer and
+  the contact form.
+- ⏳ **Real OG cover** — `public/og-cover.png` is a generated placeholder; design a final
+  1200×630 once the logo is final.
 
 ## Future pages (architected for, not built)
 

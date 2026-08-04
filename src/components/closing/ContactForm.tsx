@@ -237,7 +237,9 @@ export function ContactForm() {
         <button type="submit" className="btn btn-primary mag" disabled={status === 'submitting'}>
           {status === 'submitting' ? 'Sending…' : 'Send message'} {Icons.arrow({ size: 15 })}
         </button>
-        <span className="cform-note">replies in ~24h · no sales fluff</span>
+        <span className="cform-note">
+          replies in ~24h · no sales fluff · <a href="/privacy/">privacy policy</a>
+        </span>
       </div>
     </form>
   );

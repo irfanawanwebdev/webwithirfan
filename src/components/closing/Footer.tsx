@@ -78,9 +78,13 @@ export function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <small>© 2026 WebWithIrfan · Frontend &amp; WordPress development.</small>
           <small>
-            Updated <time dateTime="2026-06">June 2026</time>
+            © 2026 WebWithIrfan · Frontend &amp; WordPress development.
+            <span aria-hidden="true"> · </span>
+            <a href="/privacy/">Privacy policy</a>
+          </small>
+          <small>
+            Updated <time dateTime="2026-08">August 2026</time>
             <span aria-hidden="true"> · </span>
             {LINKS.email}
           </small>

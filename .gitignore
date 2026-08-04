@@ -7,9 +7,11 @@ dist-ssr
 dist-server
 *.local
 
-# Environment / secrets (only .env.example is committed)
+# Environment / secrets (only .env.example is committed).
+# Covers .env, .env.local, .env.production, local.env, prod.env, etc.
 .env
 .env.*
+*.env
 !.env.example
 
 # Logs
