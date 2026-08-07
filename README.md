@@ -1,19 +1,20 @@
 # WebWithIrfan — Portfolio & Freelance-Agency Site
 
-A single-page portfolio/agency site for Irfan Awan, built as a **static** site with
-**Vite + React + TypeScript**.
+A portfolio/agency site for Irfan Awan, built with **Next.js (static export) +
+React + TypeScript**. Every route is prerendered to plain HTML at build time —
+no server, deployable on any static host.
 
-It was recreated from a high-fidelity HTML/JSX design prototype (which ran via
-in-browser Babel) as production code: no dev React, no in-browser Babel, self-hosted
-fonts, GSAP loaded off the critical path, and a contact form wired to a real backend.
+It was recreated from a high-fidelity HTML/JSX design prototype as production
+code, then migrated from Vite to Next.js so new pages (services, tools, blog,
+case studies) each get their own URL and metadata.
 
 ## Quick start
 
 ```bash
 npm install
-cp .env.example .env.local   # then fill in VITE_WEB3FORMS_KEY (see "Contact form")
+cp .env.example .env.local   # then fill in NEXT_PUBLIC_WEB3FORMS_KEY (see "Contact form")
 npm run dev                  # local dev server
-npm run build                # type-check + static build -> dist/
+npm run build                # type-check + static export -> out/
 npm run preview              # serve the production build locally
 ```
 
@@ -23,21 +24,26 @@ Production is a Vercel project connected to this repo — every push to `main`
 builds and deploys. Live at <https://webwithirfan.vercel.app/> until the
 custom domain is attached.
 
-- `VITE_WEB3FORMS_KEY` is set in **Vercel > Settings > Environment Variables**
-  (Production). It is injected at build time; nothing secret lives in the repo.
-- Security headers and immutable caching for `/assets/` are configured in
-  [`vercel.json`](vercel.json).
-- The output is still a plain static `dist/`, so it can move to any static host
+- `NEXT_PUBLIC_WEB3FORMS_KEY` is set in **Vercel > Settings > Environment
+  Variables** (Production). It is injected at build time; nothing secret lives
+  in the repo.
+- Security headers, legacy-WordPress redirects, and immutable caching for
+  `/_next/static/` are configured in [`vercel.json`](vercel.json).
+- The output is a plain static `out/`, so it can move to any static host
   (Netlify, Cloudflare Pages, S3, …) if ever needed.
 
 ## Project structure
 
 ```
-index.html                     # entry HTML: meta, OG/Twitter cards, JSON-LD
+app/
+  layout.tsx                   # html shell: fonts, global CSS, metadata defaults, JSON-LD
+  page.tsx                     # home page (metadata + renders src/App)
+  not-found.tsx                # designed 404 (exported to out/404.html)
+  sitemap.ts                   # generated sitemap.xml — add every new route here
+  robots.ts                    # generated robots.txt
 src/
-  main.tsx                     # React root + self-hosted font imports
-  App.tsx                      # composition root; runs the motion engine
-  config/links.ts              # ⭐ ALL placeholder links + form endpoint (swap at launch)
+  App.tsx                      # composition root ('use client'); runs the motion engine
+  config/links.ts              # ⭐ ALL contact links + Web3Forms config
   data/content.ts              # all page content (services, projects, tools, FAQ, …)
   lib/scroll.ts                # smooth section scroll with fixed-nav offset
   lib/motion.ts                # GSAP reveals/count-ups/pointer-FX (dynamically imported)
@@ -48,7 +54,7 @@ src/
   components/sections/         # Stats, Services, Projects, Tools, Process, About, Testimonials, FAQ
   components/closing/          # TechMarquee, Contact (+ ContactForm), Footer
   assets/                      # optimized About photo (webp)
-public/                        # favicon.svg, apple-touch-icon, og-cover, robots, sitemap, 404, manifest
+public/                        # favicon.svg, apple-touch-icon, og-cover, privacy/, llms.txt, manifest
 scripts/gen-assets.mjs         # regenerates optimized photo + icons (npm run gen-assets)
 ```
 
@@ -76,15 +82,15 @@ Still to set before full launch:
 ## Contact form
 
 The form (`components/closing/ContactForm.tsx`) posts to **Web3Forms**
-(`https://api.web3forms.com/submit`) using the access key from `VITE_WEB3FORMS_KEY`.
+(`https://api.web3forms.com/submit`) using the access key from
+`NEXT_PUBLIC_WEB3FORMS_KEY`.
 
 - **Production**: the key is set in Vercel's environment variables, so it is baked into
   the bundle on deploy. Recipients (primary + CC) are configured in the Web3Forms
   dashboard for the key.
-- **Local**: copy `.env.example` to `.env.local` and paste the key. Note that Vite only
-  loads `.env` / `.env.local` / `.env.[mode]` — a file named anything else (like the old
-  `local.env`) is silently ignored, and the bundler then strips the whole Web3Forms code
-  path as dead code.
+- **Local**: copy `.env.example` to `.env.local` and paste the key. Only `NEXT_PUBLIC_`
+  prefixed variables reach the client bundle; with no key the bundler strips the whole
+  Web3Forms code path as dead code and the form falls back to mailto.
 
 It includes client-side validation, a honeypot (`botcheck`) for spam, an error state, and
 a success state. **With no key set it degrades to a prefilled `mailto:`** so it is never a

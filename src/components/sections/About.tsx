@@ -9,7 +9,7 @@ export function About() {
       <div className="container about-grid">
         <div className="about-photo" data-reveal>
           <img
-            src={aboutPhoto}
+            src={aboutPhoto.src}
             alt="Irfan Awan, frontend developer and WordPress expert"
             width={699}
             height={727}

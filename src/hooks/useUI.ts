@@ -28,8 +28,9 @@ export function useScrollLock(active: boolean) {
   }, [active]);
 }
 
-/** Trap Tab within a container; restore focus to the opener on close. */
-export function useFocusTrap(ref: RefObject<HTMLElement>, active: boolean) {
+/** Trap Tab within a container; restore focus to the opener on close.
+    (React 19: useRef<T>(null) yields RefObject<T | null>, so accept null.) */
+export function useFocusTrap(ref: RefObject<HTMLElement | null>, active: boolean) {
   useEffect(() => {
     if (!active || !ref.current) return;
     const opener = document.activeElement as HTMLElement | null;

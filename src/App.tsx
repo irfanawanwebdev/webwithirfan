@@ -1,4 +1,8 @@
+'use client';
+
 /* App — composition root. Wires sections, background FX and the motion engine.
+   This is the single client boundary: everything below hydrates in the browser,
+   but Next still prerenders the full HTML at build time.
    The design-time <TweaksPanel> is intentionally excluded; its defaults are
    hardcoded (hero layout "split", accent indigo/cyan via tokens.css, motion 6/10,
    cursor glow ON, film grain ON). */

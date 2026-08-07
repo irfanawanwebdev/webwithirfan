@@ -20,7 +20,7 @@ export const LINKS = {
 
 /** Public site origin — used for canonical/OG/sitemap. */
 export const SITE_URL =
-  import.meta.env.VITE_SITE_URL?.replace(/\/$/, '') || 'https://webwithirfan.com';
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://webwithirfan.com';
 
 /**
  * Contact-form backend (Web3Forms). Get a free access key at https://web3forms.com
@@ -28,7 +28,7 @@ export const SITE_URL =
  * The key is public by design — safe to ship in the client bundle. When unset,
  * the form degrades to a prefilled mailto: link so it is never a dead end.
  */
-export const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || '';
+export const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '';
 export const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 /** Location shown in the About fact chips. */
