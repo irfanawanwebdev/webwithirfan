@@ -36,3 +36,4 @@ Thumbs.db
 
 # Original design handoff/prototype — reference only, not part of the build (being relocated out of the repo)
 design_handoff_webwithirfan/
+docs/*

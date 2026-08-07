@@ -1,5 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/portfolio/:path*", "destination": "/#projects", "permanent": true },
+    { "source": "/portfolio-category/:path*", "destination": "/#projects", "permanent": true },
+    { "source": "/our-portfolio/:path*", "destination": "/#projects", "permanent": true },
+    { "source": "/tool/:path*", "destination": "/#tools", "permanent": true },
+    { "source": "/booking/:path*", "destination": "/#contact", "permanent": true },
+    { "source": "/contact-us/:path*", "destination": "/#contact", "permanent": true },
+    { "source": "/about-us/:path*", "destination": "/#about", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
