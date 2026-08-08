@@ -1,0 +1,99 @@
+/* Service pages + services index (components/services/, app/services/).
+   Everything derives from tokens.css; section/container/btn/faq styles are
+   reused from sections.css. */
+
+/* ---- hero ---- */
+.svc-hero { padding: 148px 0 8px; }
+.crumbs {
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  font-family: var(--font-mono); font-size: var(--fs-xs); color: var(--tx-3);
+  margin-bottom: 22px;
+}
+.crumbs a { color: var(--tx-2); transition: color .2s; }
+.crumbs a:hover { color: var(--tx-0); }
+.svc-hero .eyebrow { display: inline-block; margin-bottom: 16px; }
+.svc-hero h1 {
+  font-size: clamp(2.15rem, 4.6vw, 3.6rem); line-height: 1.08;
+  letter-spacing: -0.02em; max-width: 22ch; text-wrap: balance;
+}
+.svc-sub { margin: 18px 0 28px; color: var(--tx-2); font-size: var(--fs-lead); max-width: 62ch; }
+.svc-trust {
+  display: flex; flex-wrap: wrap; gap: 14px 44px;
+  margin-top: 38px; padding-top: 24px; border-top: 1px solid var(--border-soft);
+}
+.svc-trust-item b {
+  display: block; font-family: var(--font-head); font-weight: 600;
+  font-size: 1.35rem; color: var(--tx-0); font-variant-numeric: tabular-nums;
+}
+.svc-trust-item span { font-size: var(--fs-xs); color: var(--tx-3); }
+
+/* ---- prose blocks ---- */
+.svc-tight { max-width: 860px; }
+.svc-prose p { color: var(--tx-2); max-width: 68ch; }
+.svc-prose p + p { margin-top: 14px; }
+
+/* ---- deliverables ---- */
+.deliv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+.deliv-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 22px 20px; transition: border-color .2s, transform .2s;
+}
+.deliv-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.deliv-ico {
+  width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center;
+  color: var(--accent-2); background: rgba(var(--accent-glow), .12);
+  border: 1px solid rgba(var(--accent-glow), .3); margin-bottom: 14px;
+}
+.deliv-card h3 { font-size: 1.02rem; margin-bottom: 6px; }
+.deliv-card p { color: var(--tx-2); font-size: var(--fs-sm); line-height: 1.55; }
+
+/* ---- proof ---- */
+.proof-panel { padding: 28px; border-radius: 18px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
+.proof-stats { display: flex; flex-wrap: wrap; gap: 12px 40px; }
+
+/* ---- steps + guarantee ---- */
+.svc-steps { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; max-width: 720px; }
+.svc-steps li {
+  display: flex; gap: 18px; align-items: flex-start;
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px;
+}
+.svc-step-n { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--accent-2); padding-top: 3px; }
+.svc-steps h3 { font-size: 1rem; margin-bottom: 4px; }
+.svc-steps p { color: var(--tx-2); font-size: var(--fs-sm); line-height: 1.55; }
+.svc-guarantee {
+  margin-top: 26px; max-width: 720px; padding: 22px 24px; border-radius: 14px;
+  background: rgba(var(--accent-glow), .07); border: 1px solid rgba(var(--accent-glow), .25);
+}
+.svc-guarantee h3 { font-size: 1.05rem; margin-bottom: 10px; }
+.svc-guarantee p { color: var(--tx-2); font-size: var(--fs-sm); line-height: 1.6; }
+.svc-guarantee p + p { margin-top: 10px; }
+
+/* ---- final CTA ---- */
+.svc-final { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.svc-final h2 { font-size: var(--fs-h2); max-width: 20ch; text-wrap: balance; }
+.svc-final > p { color: var(--tx-2); max-width: 54ch; }
+.svc-related {
+  display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center; margin-top: 14px;
+  font-size: var(--fs-sm); color: var(--tx-3);
+}
+.svc-related a { color: var(--tx-2); text-decoration: underline; text-underline-offset: 3px; transition: color .2s; }
+.svc-related a:hover { color: var(--tx-0); }
+
+/* ---- home services section: link to /services/ ---- */
+.svc-explore { display: flex; justify-content: center; margin-top: var(--s-4); }
+
+/* ---- services index ---- */
+.svcx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px; }
+.svcx-card {
+  display: flex; flex-direction: column; gap: 10px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px 22px;
+  transition: border-color .2s, transform .2s;
+}
+a.svcx-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.svcx-card h2 { font-size: 1.15rem; }
+.svcx-card p { color: var(--tx-2); font-size: var(--fs-sm); line-height: 1.6; flex: 1; }
+.svcx-go { color: var(--accent-2); font-size: var(--fs-sm); font-weight: 500; display: inline-flex; align-items: center; gap: 6px; }
+.svcx-soon {
+  align-self: flex-start; font-family: var(--font-mono); font-size: var(--fs-label);
+  color: var(--tx-3); border: 1px solid var(--border); border-radius: 999px; padding: 2px 10px;
+}

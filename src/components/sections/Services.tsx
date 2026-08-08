@@ -34,6 +34,11 @@ export function Services() {
           </div>
         ))}
       </div>
+      <div className="svc-explore" data-reveal>
+        <a className="btn btn-ghost" href="/services/">
+          Explore detailed service pages {Icons.arrow({ size: 14 })}
+        </a>
+      </div>
     </section>
   );
 }

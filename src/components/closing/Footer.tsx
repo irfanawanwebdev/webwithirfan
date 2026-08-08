@@ -3,9 +3,17 @@ import { Icons } from '../Icons';
 import { LINKS } from '../../config/links';
 import { goSection } from '../../lib/scroll';
 
-const COLS: Array<[title: string, links: Array<[label: string, id: string]>]> = [
-  ['Services', [['WordPress', 'services'], ['eCommerce', 'services'], ['Frontend', 'services'], ['Web Apps', 'services']]],
-  ['Explore', [['Projects', 'projects'], ['Tools', 'tools'], ['Process', 'process'], ['Contact', 'contact']]],
+/* href starting with "#" scrolls to a home section (cross-page aware via
+   goSection); anything else is a normal page link. */
+const COLS: Array<[title: string, links: Array<[label: string, href: string]>]> = [
+  ['Services', [
+    ['All services', '/services/'],
+    ['Speed Optimization', '/services/wordpress-speed-optimization/'],
+    ['WordPress', '#services'],
+    ['eCommerce', '#services'],
+    ['Web Apps', '#services'],
+  ]],
+  ['Explore', [['Projects', '#projects'], ['Tools', '#tools'], ['Process', '#process'], ['Contact', '#contact']]],
 ];
 
 const EXT: Array<[label: string, url: string]> = [
@@ -53,18 +61,24 @@ export function Footer() {
           {COLS.map(([title, links]) => (
             <div className="footer-col" key={title}>
               <p className="fcol-title">{title}</p>
-              {links.map(([label, id]) => (
-                <a
-                  key={label}
-                  href={'#' + id}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    goSection(id);
-                  }}
-                >
-                  {label}
-                </a>
-              ))}
+              {links.map(([label, href]) =>
+                href.startsWith('#') ? (
+                  <a
+                    key={label}
+                    href={href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      goSection(href.slice(1));
+                    }}
+                  >
+                    {label}
+                  </a>
+                ) : (
+                  <a key={label} href={href}>
+                    {label}
+                  </a>
+                ),
+              )}
             </div>
           ))}
           <div className="footer-col">

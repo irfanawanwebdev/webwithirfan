@@ -15,6 +15,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${SITE_URL}/services/`,
+      lastModified: '2026-08-08',
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/services/wordpress-speed-optimization/`,
+      lastModified: '2026-08-08',
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${SITE_URL}/privacy/`,
       lastModified: '2026-08-04',
       changeFrequency: 'yearly',

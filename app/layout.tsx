@@ -5,6 +5,7 @@ import type { Metadata, Viewport } from 'next';
 import '../src/styles/fonts.css';
 import '../src/styles/tokens.css';
 import '../src/styles/sections.css';
+import '../src/styles/service-page.css';
 import { SITE_URL } from '../src/config/links';
 
 export const metadata: Metadata = {
