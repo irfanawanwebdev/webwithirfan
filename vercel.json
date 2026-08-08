@@ -2,13 +2,13 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "redirects": [
-    { "source": "/portfolio/:path*", "destination": "/#projects", "permanent": true },
-    { "source": "/portfolio-category/:path*", "destination": "/#projects", "permanent": true },
-    { "source": "/our-portfolio/:path*", "destination": "/#projects", "permanent": true },
-    { "source": "/tool/:path*", "destination": "/#tools", "permanent": true },
-    { "source": "/booking/:path*", "destination": "/#contact", "permanent": true },
-    { "source": "/contact-us/:path*", "destination": "/#contact", "permanent": true },
-    { "source": "/about-us/:path*", "destination": "/#about", "permanent": true }
+    { "source": "/portfolio/(.*)", "destination": "/#projects", "permanent": true },
+    { "source": "/portfolio-category/(.*)", "destination": "/#projects", "permanent": true },
+    { "source": "/our-portfolio(.*)", "destination": "/#projects", "permanent": true },
+    { "source": "/tool/(.*)", "destination": "/#tools", "permanent": true },
+    { "source": "/booking(.*)", "destination": "/#contact", "permanent": true },
+    { "source": "/contact-us(.*)", "destination": "/#contact", "permanent": true },
+    { "source": "/about-us(.*)", "destination": "/#about", "permanent": true }
   ],
   "headers": [
     {
